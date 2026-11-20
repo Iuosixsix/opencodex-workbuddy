@@ -45,6 +45,11 @@ export const WORKBUDDY_MODELS = [
   "minimax-m3.1-flash",
 ];
 
+/** Selectable request values for this route; other WorkBuddy models do not inherit this ladder. */
+export const WORKBUDDY_MODEL_REASONING_EFFORTS: Record<string, string[]> = {
+  "deepseek-v4.1-flash": ["low", "medium", "high", "xhigh", "max"],
+};
+
 export const WORKBUDDY_MODEL_CONTEXT_WINDOWS: Record<string, number> = {
   "auto": 256_000,
   "hy3": 192_000,

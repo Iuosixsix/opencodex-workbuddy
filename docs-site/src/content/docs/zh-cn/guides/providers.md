@@ -18,6 +18,11 @@ description: opencodex 进行身份验证并与 LLM 提供商通信的所有方�
 WorkBuddy 请求会对固定的客户端提示词标识进行兼容处理，包括 DeepSeek Harness 的文件引用开场说明，
 以避免已知的 `400 / 11128` 渠道校验拒绝。文件引用说明的含义保持不变，其他上游拒绝仍按原样返回。
 
+`workbuddy/deepseek-v4.1-flash` 会向 DSH 导出 Low、Medium、High、XHigh、Max 五档请求选项。
+现有安装更新并重启代理后，运行 `ocx integration client enable --client dsh` 刷新托管集成即可，
+无需手工修改 `cordis.patch.yml`。用户明确设置的模型档位（包括空列表）仍优先生效。
+这里声明的是可选请求参数，不代表已确认 WorkBuddy 为五档分别采用不同的思考预算。
+
 `zai-plan` 是 ZCode Plan 的 OAuth 提供商。运行 `ocx account login zai-plan` 登录，
 再选择 `zai-plan/<model>`。它与把 ZCode 客户端接入本地代理的 ZCode 集成功能不同。
 

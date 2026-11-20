@@ -30,6 +30,12 @@ WorkBuddy requests normalize fixed client prompt markers, including DeepSeek Har
 file-reference introduction, to avoid known `400 / 11128` channel-verification refusals.
 The file-reference instructions retain their meaning; unrelated upstream refusals are returned unchanged.
 
+`workbuddy/deepseek-v4.1-flash` exports Low, Medium, High, XHigh and Max request choices to DSH.
+Existing installations inherit the model metadata after updating and restarting the proxy. Refresh
+the managed DSH integration with `ocx integration client enable --client dsh`; there is no need to
+edit `cordis.patch.yml`. Explicit model effort overrides, including an empty ladder, stay authoritative.
+These are selectable request values; they do not establish that WorkBuddy applies five distinct budgets.
+
 `zai-plan` is the ZCode Plan OAuth provider. Use `ocx account login zai-plan` and select a
 `zai-plan/<model>` route. It is separate from the ZCode client integration, which configures
 ZCode to call the local proxy.

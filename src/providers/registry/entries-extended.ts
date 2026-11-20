@@ -16,6 +16,7 @@ import {
   WORKBUDDY_MODEL_CONTEXT_WINDOWS,
   WORKBUDDY_MODEL_INPUT_MODALITIES,
   WORKBUDDY_MODEL_MAX_OUTPUT_TOKENS,
+  WORKBUDDY_MODEL_REASONING_EFFORTS,
   WORKBUDDY_NO_VISION_MODELS,
 } from "./workbuddy-seeds";
 import {
@@ -1512,6 +1513,7 @@ export const PROVIDER_REGISTRY_EXTENDED: readonly ProviderRegistryEntry[] = [
     dashboardUrl: "https://www.codebuddy.cn",
     defaultModel: "auto",
     models: [...WORKBUDDY_MODELS],
+    modelReasoningEfforts: WORKBUDDY_MODEL_REASONING_EFFORTS,
     modelContextWindows: { ...WORKBUDDY_MODEL_CONTEXT_WINDOWS },
     modelMaxOutputTokens: { ...WORKBUDDY_MODEL_MAX_OUTPUT_TOKENS },
     modelInputModalities: { ...WORKBUDDY_MODEL_INPUT_MODALITIES },
